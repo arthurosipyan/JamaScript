@@ -9,7 +9,7 @@ Meet JamaScript, your personal assistant, ready to migrate your data!
 
 ## Setup:
 
-1. Download [JamaScript](https://github.com/arthurosipyan/JamaScript/archive/master.zip)
+1. Download and unzip [JamaScript](https://github.com/arthurosipyan/JamaScript/archive/master.zip)
 2. Open your preferred Python IDE ([PyCharm](https://www.jetbrains.com/pycharm/download/#section=windows) is recommended)
 3. Navigate to where you saved JamaScript and open it
 4. Run ```main.py``` and login with your client credentials
