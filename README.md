@@ -6,12 +6,10 @@ Meet JamaScript, your personal assistant, ready to migrate your data!
 - [Required](https://github.com/arthurosipyan/JamaScript#required) 
 - [Setup](https://github.com/arthurosipyan/JamaScript#setup) 
 - [Running JamaScript](https://github.com/arthurosipyan/JamaScript#running-jamascript)
-- [File Format](https://github.com/arthurosipyan/JamaScript#file-format)
+- [Excel File Format](https://github.com/arthurosipyan/JamaScript#excel-file-format)
 - [Additional Notes](https://github.com/arthurosipyan/JamaScript#additional-notes)
 - [Authors](https://github.com/arthurosipyan/JamaScript#authors)
 - [License](https://github.com/arthurosipyan/JamaScript#license)
-
-
 
 
 ## Required:
@@ -50,31 +48,15 @@ Meet JamaScript, your personal assistant, ready to migrate your data!
 4. Exit
     - Terminate
 
-## File Format:
+## Excel File Format:
 
-* Components:
-    * Col 1 = Name
-    
-* Use Cases:
-    * Col 1 = Name
-    * Col 2 = PreCondition
-    * Col 3 = MainFlow
-    * Col 4 = PostCondition
-    * Col 5 = AlternateFlows
-    * Col 6 = Blueprint_ID
-    
-* Requirements:
-    * Col 1 = Name
-    * Col 2 = Description
-    * Col 3 = Blueprint_ID
-    
-* Wireframes:
-    * Col 1 = Name
-    * Col 2 = Blueprint_ID
-
-* Documents:
-    * Col 1 = Name
-    * Col 2 = Blueprint_ID
+| Artifact Types     | Col 1 | Col 2        | Col 3        | Col 4         | Col 5          | Col 6        |
+| -------------------|:-----:|:------------:|:------------:|:-------------:|:--------------:|:------------:|
+| **Components**     | Name  |              |              |               |                |              |
+| **Use Cases**      | Name  | PreCondition | MainFlow     | PostCondition | AlternateFlows | Blueprint_ID |
+| **Requirements**   | Name  | Description  | Blueprint_ID |               |                |              |
+| **Wireframes**     | Name  | Blueprint_ID |              |               |                |              |
+| **Documents**      | Name  | Blueprint_ID |              |               |                |              |
     
 **Note:** Blank cells need to have some data for the file to be read. This can be fixed with some inserted whitespaces.
 
@@ -86,7 +68,7 @@ Meet JamaScript, your personal assistant, ready to migrate your data!
 - While this was developed for the migration process from Blueprint to Jama, it can create new items as well
 
 
-## Authors
+## Author
 
 * **Arthur Osipyan** - *Developer and Photographer* - [Instagram](https://www.instagram.com/arty.nyc/) [Twitter](https://twitter.com/arty_nyc) [GitHub](https://github.com/arthurosipyan)
 
