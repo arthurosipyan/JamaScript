@@ -5,9 +5,9 @@ Meet JamaScript, your personal assistant, ready to migrate your data!
 ## Table of Contents:
 - [Required](https://github.com/arthurosipyan/JamaScript#required) 
 - [Setup](https://github.com/arthurosipyan/JamaScript#setup) 
-- [Running JamaScript](https://github.com/arthurosipyan/JamaScript#runningjamascript)
-- [File Format](https://github.com/arthurosipyan/JamaScript#fileformat)
-- [Additional Notes](https://github.com/arthurosipyan/JamaScript#additionalnotes)
+- [Running JamaScript](https://github.com/arthurosipyan/JamaScript#running-jamascript)
+- [File Format](https://github.com/arthurosipyan/JamaScript#file-format)
+- [Additional Notes](https://github.com/arthurosipyan/JamaScript#additional-notes)
 - [Authors](https://github.com/arthurosipyan/JamaScript#authors)
 - [License](https://github.com/arthurosipyan/JamaScript#license)
 
