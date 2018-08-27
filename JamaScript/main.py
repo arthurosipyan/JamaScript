@@ -243,7 +243,7 @@ def main2():
     main2_selection = int(input("______________________________________________________\n"
                                 "_________ What else would you like to do? ____________\n"
                                 "______________________________________________________\n"
-                                "[1] Add specific requirements/components\n"
+                                "[1] Add artifacts\n"
                                 "[2] Change project\n"
                                 "[3] Exit\n"
                                 "______________________________________________________\n"))
@@ -269,7 +269,7 @@ def main():
     main_selection = int(input("_____________ What would you like to do? _____________\n"
                                "______________________________________________________\n"
                                "[1] Add main components with their sets\n"
-                               "[2] Add specific requirements/components\n"
+                               "[2] Add artifacts\n"
                                "[3] Change project\n"
                                "[4] Exit\n"
                                "______________________________________________________\n"))
