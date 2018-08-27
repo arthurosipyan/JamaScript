@@ -40,7 +40,7 @@ Meet JamaScript, your personal assistant, ready to migrate your data!
 2. Add specific requirements/components
     - This will ask you to select what type of artifact you'd like to import
     - After selecting a valid artifact option, you will be asked for the target item's ```ID```, which is where everything will be imported
-    - Finally, you'll be asked for a file to be read. Make sure to follow the correct [file format](https://github.com/arthurosipyan/JamaScript#file-format)!
+    - Finally, you'll be asked for a file to be read. Make sure to follow the correct [file format](https://github.com/arthurosipyan/JamaScript#excel-file-format)!
 
 3. Change project
     - Change the current project
