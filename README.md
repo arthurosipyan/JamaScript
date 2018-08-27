@@ -37,7 +37,7 @@ Meet JamaScript, your personal assistant, ready to migrate your data!
         - Technical Requirements
         - Test Cases and Defects linked to a Test Management Sub Component
 
-2. Add specific requirements/components
+2. Add specific artifacts
     - This will ask you to select what type of artifact you'd like to import
     - After selecting a valid artifact option, you will be asked for the target item's ```ID```, which is where everything will be imported
     - Finally, you'll be asked for a file to be read. Make sure to follow the correct [file format](https://github.com/arthurosipyan/JamaScript#excel-file-format)!
