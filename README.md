@@ -2,6 +2,18 @@
 
 Meet JamaScript, your personal assistant, ready to migrate your data!
 
+## Table of Contents:
+- [Required](https://github.com/arthurosipyan/JamaScript#required) 
+- [Setup](https://github.com/arthurosipyan/JamaScript#setup) 
+- [Running JamaScript](https://github.com/arthurosipyan/JamaScript#runningjamascript)
+- [File Format](https://github.com/arthurosipyan/JamaScript#fileformat)
+- [Additional Notes](https://github.com/arthurosipyan/JamaScript#additionalnotes)
+- [Authors](https://github.com/arthurosipyan/JamaScript#authors)
+- [License](https://github.com/arthurosipyan/JamaScript#license)
+
+
+
+
 ## Required:
 - [Jama Account](https://www.jamasoftware.com/get-started/) 
 - [Client Credentials](http://help.jamasoftware.com/ah/en/get-started/manage-your-profile/set-api-credentials.html) 
@@ -83,3 +95,4 @@ Meet JamaScript, your personal assistant, ready to migrate your data!
 
 This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/arthurosipyan/JamaScript/blob/master/LICENSE) file for details
 
+[Top of Page](https://github.com/arthurosipyan/JamaScript#jamascript)
