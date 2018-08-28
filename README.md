@@ -80,8 +80,8 @@ This project is licensed under the MIT License - see the [LICENSE.md](https://gi
 
 ## Feedback
 
-- Found a bug? Submit [here](https://github.com/arthurosipyan/JamaScript/blob/master/.github/ISSUE_TEMPLATE/bug_report.md)!
-- Help make JamaScript better! Submit your ideas [here](https://github.com/arthurosipyan/JamaScript#feedback)!
+- Found a bug? Fill out a [report](https://github.com/arthurosipyan/JamaScript/blob/master/.github/ISSUE_TEMPLATE/bug_report.md)!
+- Help make JamaScript better! Submit a [feature request](https://github.com/arthurosipyan/JamaScript/blob/master/.github/ISSUE_TEMPLATE/feature_request.md)!
 
 
 [Top of Page](https://github.com/arthurosipyan/JamaScript#jamascript)
