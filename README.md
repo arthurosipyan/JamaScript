@@ -10,6 +10,7 @@ Meet JamaScript, your personal assistant, ready to migrate your data!
 - [Additional Notes](https://github.com/arthurosipyan/JamaScript#additional-notes)
 - [Authors](https://github.com/arthurosipyan/JamaScript#authors)
 - [License](https://github.com/arthurosipyan/JamaScript#license)
+- [Feedback](https://github.com/arthurosipyan/JamaScript#feedback)
 
 
 ## Required:
@@ -76,5 +77,11 @@ Meet JamaScript, your personal assistant, ready to migrate your data!
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/arthurosipyan/JamaScript/blob/master/LICENSE) file for details
+
+## Feedback
+
+- Found a bug? Submit [here](https://github.com/arthurosipyan/JamaScript/blob/master/.github/ISSUE_TEMPLATE/bug_report.md)!
+- Help make JamaScript better! Submit your ideas [here](https://github.com/arthurosipyan/JamaScript#feedback)!
+
 
 [Top of Page](https://github.com/arthurosipyan/JamaScript#jamascript)
