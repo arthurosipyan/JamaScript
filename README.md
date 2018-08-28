@@ -8,8 +8,8 @@ Meet JamaScript, your personal assistant, ready to migrate your data!
 - [Running JamaScript](https://github.com/arthurosipyan/JamaScript#running-jamascript)
 - [Excel File Format](https://github.com/arthurosipyan/JamaScript#excel-file-format)
 - [Additional Notes](https://github.com/arthurosipyan/JamaScript#additional-notes)
-- [Authors](https://github.com/arthurosipyan/JamaScript#authors)
-- [License](https://github.com/arthurosipyan/JamaScript#license)
+- [Author](https://github.com/arthurosipyan/JamaScript#author)
+- [License and Code of Conduct](https://github.com/arthurosipyan/JamaScript#license-and-code-of-conduct)
 - [Feedback](https://github.com/arthurosipyan/JamaScript#feedback)
 
 
