@@ -59,7 +59,7 @@ Meet JamaScript, your personal assistant, ready to migrate your data!
 | **Wireframes**     | Name  | Blueprint_ID |              |               |                |              |
 | **Documents**      | Name  | Blueprint_ID |              |               |                |              |
     
-**Note:** Blank cells need to have some data for the file to be read. This can be fixed with some inserted whitespaces.
+**Note:** Blank cells need to have some data for the file to be read. This can be fixed with some placeholder text.
 
 
 ## Additional Notes:
