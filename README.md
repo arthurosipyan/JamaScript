@@ -81,8 +81,8 @@ Meet JamaScript, your personal assistant, ready to migrate your data!
 
 ## Feedback
 
-- Found a bug? Fill out a [report](https://github.com/arthurosipyan/JamaScript/blob/master/.github/ISSUE_TEMPLATE/bug_report.md)!
-- Help make JamaScript better! Submit a [feature request](https://github.com/arthurosipyan/JamaScript/blob/master/.github/ISSUE_TEMPLATE/feature_request.md)!
+- Found a bug? Submit a [report](https://github.com/arthurosipyan/JamaScript/blob/master/.github/ISSUE_TEMPLATE/bug_report.md).
+- Help make JamaScript better by submitting a [feature request](https://github.com/arthurosipyan/JamaScript/blob/master/.github/ISSUE_TEMPLATE/feature_request.md)!
 
 
 [Top of Page](https://github.com/arthurosipyan/JamaScript#jamascript)
