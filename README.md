@@ -74,9 +74,10 @@ Meet JamaScript, your personal assistant, ready to migrate your data!
 * **Arthur Osipyan** - *Developer and Photographer* - [Instagram](https://www.instagram.com/arty.nyc/) [Twitter](https://twitter.com/arty_nyc) [GitHub](https://github.com/arthurosipyan)
 
 
-## License
+## License and Code of Conduct
 
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/arthurosipyan/JamaScript/blob/master/LICENSE) file for details
+- This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/arthurosipyan/JamaScript/blob/master/LICENSE) file for details
+- This project's Code of Conduct can be found [here](https://github.com/arthurosipyan/JamaScript/blob/master/CODE_OF_CONDUCT.md)
 
 ## Feedback
 
