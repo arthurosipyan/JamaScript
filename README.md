@@ -17,6 +17,8 @@ Meet JamaScript, your personal assistant, ready to migrate your data!
 - [Jama Account](https://www.jamasoftware.com/get-started/) 
 - [Client Credentials](http://help.jamasoftware.com/ah/en/get-started/manage-your-profile/set-api-credentials.html) 
 - [Python (3.7 or greater or greater)](https://www.python.org/downloads/)
+- [Microsoft Excel](https://www.microsoft.com/en-us/store/b/excel-2016?&OCID=AID718530_SEM_xnbrT3OI&gclid=EAIaIQobChMIrq6vo7eS3QIVl1cNCh2kFAvLEAAYASAAEgJdYfD_BwE)
+
 
 ## Setup:
 
