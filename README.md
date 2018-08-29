@@ -30,6 +30,32 @@ Meet JamaScript, your personal assistant, ready to migrate your data!
 
 **Note:** Make sure you have the proper packages installed and have "JamaScript" as your "Sources Root"
 
+| Packages        | Version    |
+| ----------------|:----------:|
+| PyYAML          | 3.13+      |
+| certifi         | 2018.4.16+ |
+| chardet         | 3.0.4+     |
+| docutils        | 0.14+      |
+| et-xmlfile      | 1.0.1+     |
+| get             | 1.0.3+     |
+| idna            | 2.7+       |
+| jdcal           | 1.4+       |
+| numpy           | 1.15.0+    |
+| openpyxl        | 2.5.4+     |
+| pandas          | 0.23.3+    |
+| pip             | 10.0.1+    |
+| post            | 1.0.2+     |
+| public          | 1.0.3+     |
+| python-dateutil | 2.7.3+     |
+| pytz            | 2018.5+    |
+| query-string    | 1.0.2+     |
+| request         | 1.0.2+     |
+| requests        | 2.19.1+    |
+| setuptools      | 39.0.1+    |
+| six             | 1.11.0+    |
+| urllib3         | 1.23+      |
+| xlrd            | 1.1.0+     |
+
 ## Running JamaScript:
 - Once logged in, you will be asked for a ```Project API_ID```. This can be found when viewing one of your projects.
 - After confirming that's the project you'd like to work on, you will be prompt with a few options:
