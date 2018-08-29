@@ -28,6 +28,8 @@ Meet JamaScript, your personal assistant, ready to migrate your data!
 4. Run ```main.py``` and login with your client credentials
 5. Say hello to JamaScript, your personal migrate assistant!
 
+**Note:** Make sure you have the proper packages installed and have "JamaScript" as your "Sources Root"
+
 ## Running JamaScript:
 - Once logged in, you will be asked for a ```Project API_ID```. This can be found when viewing one of your projects.
 - After confirming that's the project you'd like to work on, you will be prompt with a few options:
