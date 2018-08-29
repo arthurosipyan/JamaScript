@@ -94,7 +94,6 @@ Meet JamaScript, your personal assistant, ready to migrate your data!
 
 ## Additional Notes:
 
-- There is a ```templates``` folder for reference
 - Image and Attachment imports are **not** available
 - While this was developed for the migration process from Blueprint to Jama, it can create new items as well
 
