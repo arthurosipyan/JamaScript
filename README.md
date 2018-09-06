@@ -94,7 +94,7 @@ Meet JamaScript, your personal assistant, ready to migrate your data!
 
 ## Additional Notes:
 
-- Image and Attachment imports are **not** available
+- Image and Attachment imports are under development
 - While this was developed for the migration process from Blueprint to Jama, it can create new items as well
 
 
