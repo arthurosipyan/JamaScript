@@ -18,7 +18,7 @@ def get_access_token():
     try:
         access_token = response.json()['access_token']
         user = response.json()['application_data']["JAMA_CORE"]
-        print("Welcome, " + user.split(".")[0].title() + " " + user.split(".")[1].title() + "\n"
+        print("Welcome, " + user + "\n"
               + "______________________________________________________\n")
     except KeyError:
         print('Status: ' + str(response.json()['status']) + ' ' + response.json()['error'] + '\n'
