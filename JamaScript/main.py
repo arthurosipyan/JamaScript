@@ -9,11 +9,16 @@ target_item_id = 0
 user_choice = 0
 main_selection = 0
 main2_selection = 0
+total_items_imported = 0
+original_count = 0
 headers = {"Authorization": "Bearer " + access_token, "Content-Type": "application/json"}
 
 
 def add_components_to_root_level(root_cmp_names1):
+    global original_count
+    original_count = 9 * len(root_cmp_names1)
     url = "https://fitchratings.jamacloud.com/rest/latest/items?setGlobalIdManually=false"
+    print("*** Attempting to create [" + str(original_count) + "] items...")
     for name in root_cmp_names1:
         data = {"project": project_api_id, "itemType": 30,
                 "childItemType": 30, "fields": {"name": name}}
@@ -21,10 +26,13 @@ def add_components_to_root_level(root_cmp_names1):
         response = requests.request("POST", url, headers=headers, data=json.dumps(data))
         global component_ids
         component_ids.append(response.json()["meta"]["id"])
-    print("- " + str(len(component_ids)) + " Components created!")
+    print("*** [" + str(len(component_ids)) + "/" + str(len(root_cmp_names1)) + "] Components created")
+    global total_items_imported
+    total_items_imported += len(component_ids)
 
 
 def add_sets_to_components():
+    count = []
     child_item_types = ["25", "87", "87", "87", "116"]
     set_names = ["Use Cases", "Functional Requirements", "Non-Functional Requirements", "Technical Requirements",
                  "Wireframes"]
@@ -42,11 +50,16 @@ def add_sets_to_components():
                                 }
                         }, "fields": {"setKey": set_keys[i], "name": set_names[i]}
                     }
-            requests.request("POST", url, headers=headers, data=json.dumps(data))
+            response = requests.request("POST", url, headers=headers, data=json.dumps(data))
+            count.append(response.json()["meta"]["id"])
         i += 1
-    print("- " + str(5 * len(component_ids)) + " sets of Use Cases, Functional Requirements, "
-                                               "Non-Functional Requirements, Technical Requirements, "
-                                               "and Wireframes created!")
+    print("*** [" + str(5 * len(component_ids)) + "/" + str(len(count)) + "] sets of Use Cases, Functional "
+                                                                          "Requirements, "
+                                                                          "Non-Functional Requirements, Technical "
+                                                                          "Requirements, "
+                                                                          "and Wireframes created")
+    global total_items_imported
+    total_items_imported += (5 * len(component_ids))
 
 
 def add_test_management():
@@ -57,10 +70,14 @@ def add_test_management():
         response = requests.request("POST", url, headers=headers, data=json.dumps(data))
         global test_management_ids
         test_management_ids.append(response.json()["meta"]["id"])
-    print("- " + str(len(component_ids)) + " Test Management Sub Components created!")
+    print("*** [" + str(len(component_ids)) + "/" + str(len(test_management_ids)) + "] Test Management Sub Components "
+                                                                                    "created")
+    global total_items_imported
+    total_items_imported += len(component_ids)
 
 
 def add_test_cases_and_defects():
+    count = []
     child_item_types = ["26", "27"]
     set_names = ["Test Cases", "Defects"]
     set_keys = ["TC", "DEF"]
@@ -76,9 +93,18 @@ def add_test_cases_and_defects():
                             "item": item}
                     }, "fields": {"setKey": set_keys[i], "name": set_names[i]}
                     }
-            requests.request("POST", url, headers=headers, data=json.dumps(data))
+            response = requests.request("POST", url, headers=headers, data=json.dumps(data))
+            count.append(response.json()["meta"]["id"])
         i += 1
-    print("- " + str(2 * len(component_ids)) + " sets of Test Cases and Defects created!")
+    print("*** [" + str(len(count)) + "/" + str(2 * len(component_ids)) + "] sets of Test Cases and Defects created")
+    print("______________________________________________________")
+    global total_items_imported
+    total_items_imported += (2 * len(component_ids))
+    if original_count == total_items_imported:
+        print("*** Success, imported [" + str(total_items_imported) + "] items!")
+    else:
+        print("*** Failed, only [" + str(total_items_imported) + "] items were imported.")
+        exit()
 
 
 def confirm_artifact_choice():
@@ -128,6 +154,8 @@ def get_user_choices():
 
 
 def add_uc(uc_data1):
+    count = []
+    print("*** Attempting to import [" + str(len(uc_data1["Name"])) + "] Use Cases...")
     url = "https://fitchratings.jamacloud.com/rest/latest/items?setGlobalIdManually=false"
     for name, pre, main_flow, post, alt, blueprint_id in zip(uc_data1["Name"], uc_data1["PreCondition"],
                                                              uc_data1["MainFlow"],
@@ -144,11 +172,17 @@ def add_uc(uc_data1):
                                   "mainflow": main_flow, "postcondition": post, "alternateflows": alt,
                                   "blueprint_id": blueprint_id}
                 }
-        requests.request("POST", url, headers=headers, data=json.dumps(data))
-    print("- " + str(len(uc_data1["Name"])) + " Use Cases imported!")
+        response = requests.request("POST", url, headers=headers, data=json.dumps(data))
+        count.append(response.json()["meta"]["id"])
+    if len(uc_data1["Name"]) == len(count):
+        print("*** Success, imported [" + str(len(count)) + "] Use Cases!")
+    else:
+        print("*** Failed, only [" + str(len(count)) + "] Use Cases imported.")
 
 
 def add_cmp(cmp_name1):
+    count = []
+    print("*** Attempting to import [" + str(len(cmp_name1)) + "] Components...")
     url = "https://fitchratings.jamacloud.com/rest/latest/items?setGlobalIdManually=false"
     for name in cmp_name1:
         data = {"project": project_api_id, "itemType": 30,
@@ -160,11 +194,17 @@ def add_cmp(cmp_name1):
                             }
                     }, "fields": {"name": name}
                 }
-        requests.request("POST", url, headers=headers, data=json.dumps(data))
-    print("- " + str(len(cmp_name1)) + " Components imported!")
+        response = requests.request("POST", url, headers=headers, data=json.dumps(data))
+        count.append(response.json()["meta"]["id"])
+    if len(cmp_name1) == len(count):
+        print("*** Success, imported [" + str(len(count)) + "] Components!")
+    else:
+        print("*** Failed, only [" + str(len(count)) + "] Components imported.")
 
 
 def add_rq(rq_data1):
+    count = []
+    print("*** Attempting to import [" + str(len(rq_data1["Name"])) + "] Requirements...")
     url = "https://fitchratings.jamacloud.com/rest/latest/items?setGlobalIdManually=false"
     for name, description, blueprint_id in zip(rq_data1["Name"], rq_data1["Description"], rq_data1["Blueprint_ID"]):
         data = {"project": project_api_id, "itemType": 87,
@@ -176,11 +216,17 @@ def add_rq(rq_data1):
                             }
                     }, "fields": {"name": name, "description": description, "blueprint_id": blueprint_id}
                 }
-        requests.request("POST", url, headers=headers, data=json.dumps(data))
-    print("- " + str(len(rq_data1["Name"])) + " Requirements imported!")
+        response = requests.request("POST", url, headers=headers, data=json.dumps(data))
+        count.append(response.json()["meta"]["id"])
+    if len(rq_data1["Name"]) == len(count):
+        print("*** Success, imported [" + str(len(count)) + "] Requirements!")
+    else:
+        print("*** Failed, only [" + str(len(count)) + "] Requirements were imported.")
 
 
 def add_document(doc_data1):
+    count = []
+    print("*** Attempting to import [" + str(len(doc_data1["Name"])) + "] Documents...")
     url = "https://fitchratings.jamacloud.com/rest/latest/items?setGlobalIdManually=false"
     for name, description, blueprint_id in zip(doc_data1["Name"], doc_data1["Description"], doc_data1["Blueprint_ID"]):
         data = {"project": project_api_id, "itemType": 87,
@@ -192,11 +238,17 @@ def add_document(doc_data1):
                             }
                     }, "fields": {"name": name, "description": description, "blueprint_id": blueprint_id}
                 }
-        requests.request("POST", url, headers=headers, data=json.dumps(data))
-    print("- " + str(len(doc_data1["Name"])) + " Requirements imported!")
+        response = requests.request("POST", url, headers=headers, data=json.dumps(data))
+        count.append(response.json()["meta"]["id"])
+    if len(doc_data1["Name"]) == len(count):
+        print("*** Success, imported [" + str(len(count)) + "] Documents!")
+    else:
+        print("*** Failed, only [" + str(len(count)) + "] Documents imported.")
 
 
 def add_wf(wf_data1):
+    count = []
+    print("*** Attempting to import [" + str(len(wf_data1["Name"])) + "] Wireframes...")
     url = "https://fitchratings.jamacloud.com/rest/latest/items?setGlobalIdManually=false"
     for name, blueprint_id in zip(wf_data1["Name"], wf_data1["Blueprint_ID"]):
         data = {"project": project_api_id, "itemType": 116,
@@ -208,8 +260,12 @@ def add_wf(wf_data1):
                             }
                     }, "fields": {"name": name, "blueprint_id": blueprint_id}
                 }
-        requests.request("POST", url, headers=headers, data=json.dumps(data))
-    print("- " + str(len(wf_data1["Name"])) + " Wireframes imported!")
+        response = requests.request("POST", url, headers=headers, data=json.dumps(data))
+        count.append(response.json()["meta"]["id"])
+    if len(wf_data1["Name"]) == len(count):
+        print("*** Success, imported [" + str(len(count)) + "] Wireframes!")
+    else:
+        print("*** Failed, only [" + str(len(count)) + "] Wireframes imported.")
 
 
 def add_requirements():
