@@ -1,25 +1,40 @@
 import requests
+from easygui import multpasswordbox, ynbox, integerbox
 
 access_token = ""
+base_url = ""
 project_api_id = ""
+title = "JamaScript"
+welcome = ""
+current_project = ""
 
 
 def get_access_token():
-    print("______________________________________________________\n")
-    client_id = input('Enter your client id: ')
-    client_secret = input('Enter your client secret: ')
-    print("______________________________________________________\n")
-    username = client_id
-    password = client_secret
-    base_url = "https://fitchratings.jamacloud.com/rest/oauth/token"
+    msg = "Please enter your client credentials and company base url"
+    field_names = ["Client ID", "Client Secret", "Base URL"]
+    field_values = multpasswordbox(msg, title, field_names)
+    # make sure that none of the fields was left blank
+    while 1:
+        if field_values is None:
+            break
+        errmsg = ""
+        for i in range(len(field_names)):
+            if field_values[i].strip() == "":
+                errmsg = errmsg + ('"%s" is a required field.\n\n' % field_names[i])
+        if errmsg == "":
+            break  # no problems found
+        field_values = multpasswordbox(errmsg, title, field_names, field_values)
+    global access_token, base_url
+    username = field_values[0]
+    password = field_values[1]
+    base_url = field_values[2]
     data = {"grant_type": "client_credentials"}
-    response = requests.post(base_url, data=data, auth=(username, password))
-    global access_token
+    response = requests.post(base_url + "/rest/oauth/token", data=data, auth=(username, password))
     try:
         access_token = response.json()['access_token']
         user = response.json()['application_data']["JAMA_CORE"]
-        print("Welcome, " + user + "\n"
-              + "______________________________________________________\n")
+        global welcome
+        welcome = ("Welcome, " + user)
     except KeyError:
         print('Status: ' + str(response.json()['status']) + ' ' + response.json()['error'] + '\n'
               + 'Message: ' + response.json()['message'] + '\nPlease enter the correct client credentials.')
@@ -27,33 +42,29 @@ def get_access_token():
 
 
 def get_project_name():
+    msg = welcome + "\n Please enter the Project API-ID"
     global project_api_id
-    project_api_id = input("Enter the Project API-ID: ")
-    print("______________________________________________________\n")
-    url = "https://fitchratings.jamacloud.com/rest/latest/projects/" + project_api_id
+    project_api_id = integerbox(msg, title)
+    url = base_url + "/rest/latest/projects/" + str(project_api_id)
     headers = {"Authorization": "Bearer " + access_token, "Content-Type": "application/json"}
     response = requests.request("GET", url, headers=headers)
     try:
         project_name = response.json()['data']['fields']['name']
-        print("Current project: " + project_name + "\n"
-                                                   "______________________________________________________\n")
+        global current_project
+        current_project = ("Current project: " + project_name)
         project_confirmation()
     except KeyError:
         print('Status: ' + response.json()['meta']['status'] + '\nMessage: ' + response.json()['meta']['message']
-              + '\nPlease enter the correct Project API-ID.\n'
-                '______________________________________________________\n')
-        get_project_name()
+              + '\nPlease enter the correct Project API-ID.\n')
+        exit()
 
 
 def project_confirmation():
-    user_confirmation = input("Is this the project you'd like to work on? (y/n) ")
-    print("______________________________________________________\n")
-    if user_confirmation.lower() == 'n':
+    msg = current_project + "\n Is this the project you'd like to work on?"
+    if ynbox(msg, title):
+        pass
+    else:
         get_project_name()
-    elif user_confirmation.lower() != 'y':
-        print("Error: Please enter a valid option.")
-        print("______________________________________________________\n")
-        project_confirmation()
 
 
 get_access_token()

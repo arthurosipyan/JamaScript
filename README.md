@@ -19,14 +19,14 @@ Meet JamaScript, your personal assistant, ready to migrate your data!
 - [Python (3.7 or greater or greater)](https://www.python.org/downloads/)
 - [Microsoft Excel](https://www.microsoft.com/en-us/store/b/excel-2016?&OCID=AID718530_SEM_xnbrT3OI&gclid=EAIaIQobChMIrq6vo7eS3QIVl1cNCh2kFAvLEAAYASAAEgJdYfD_BwE)
 
-
 ## Setup:
 
 1. Download and unzip [JamaScript](https://github.com/arthurosipyan/JamaScript/archive/master.zip)
 2. Open your preferred Python IDE ([PyCharm](https://www.jetbrains.com/pycharm/download/#section=windows) is recommended)
 3. Navigate to where you saved JamaScript and open it
-4. Run ```main.py``` and login with your client credentials
+4. Run ```main.py``` and enter both your client credentials and company's base url (https://{base_url}.jamacloud.com)
 5. Say hello to JamaScript, your personal migrate assistant!
+
 
 **Note:** Make sure you have the proper packages installed and have "JamaScript" as your "Sources Root"
 
@@ -36,6 +36,7 @@ Meet JamaScript, your personal assistant, ready to migrate your data!
 | certifi         | 2018.4.16+ |
 | chardet         | 3.0.4+     |
 | docutils        | 0.14+      |
+| easygui         | 0.98.1     |
 | et-xmlfile      | 1.0.1+     |
 | get             | 1.0.3+     |
 | idna            | 2.7+       |
@@ -57,7 +58,7 @@ Meet JamaScript, your personal assistant, ready to migrate your data!
 | xlrd            | 1.1.0+     |
 
 ## Running JamaScript:
-- Once logged in, you will be asked for a ```Project API_ID```. This can be found when viewing one of your projects.
+- Once logged in, you will be asked for a ```Project API_ID```. This can be found when viewing one of your Jama projects.
 - After confirming that's the project you'd like to work on, you will be prompt with a few options:
 
 1. Add main components with their sets
@@ -68,16 +69,13 @@ Meet JamaScript, your personal assistant, ready to migrate your data!
         - Technical Requirements
         - Test Cases and Defects linked to a Test Management Sub Component
 
-2. Add specific artifacts
+2. Add artifacts
     - This will ask you to select what type of artifact you'd like to import
-    - After selecting a valid artifact option, you will be asked for the target item's ```ID```, which is where everything will be imported
+    - After selecting an artifact type, you will be asked for the target item's ```ID```, which is where everything will be imported
     - Finally, you'll be asked for a file to be read. Make sure to follow the correct [file format](https://github.com/arthurosipyan/JamaScript#excel-file-format)!
 
 3. Change project
     - Change the current project
-
-4. Exit
-    - Terminate
 
 ## Excel File Format:
 
@@ -94,13 +92,13 @@ Meet JamaScript, your personal assistant, ready to migrate your data!
 
 ## Additional Notes:
 
-- Image and Attachment imports are under development
+- Image and Attachment imports are no longer being developed
 - While this was developed for the migration process from Blueprint to Jama, it can create new items as well
 
 
 ## Author
 
-* **Arthur Osipyan** - *Developer and Photographer* - [Instagram](https://www.instagram.com/arty.nyc/) [Twitter](https://twitter.com/arty_nyc) [GitHub](https://github.com/arthurosipyan)
+* **Arthur Osipyan** - *Software Engineer, IT Development, Business Analyst, and Photographer* - [Instagram](https://www.instagram.com/arty.nyc/) [Twitter](https://twitter.com/arty_nyc) [GitHub](https://github.com/arthurosipyan)
 
 
 ## License and Code of Conduct
@@ -111,6 +109,3 @@ Meet JamaScript, your personal assistant, ready to migrate your data!
 ## Feedback
 
 - Found a bug or want to imporve JamaScript? Submit [here](https://github.com/arthurosipyan/JamaScript/issues)!
-
-
-[Top of Page](https://github.com/arthurosipyan/JamaScript#jamascript)
