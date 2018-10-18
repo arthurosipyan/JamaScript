@@ -2,7 +2,7 @@ import json
 import requests
 from easygui import choicebox, enterbox
 
-from helper import project_api_id, access_token
+from helper import project_api_id, access_token, base_url
 
 title = "JamaScript"
 display = ""
@@ -22,7 +22,7 @@ headers = {"Authorization": "Bearer " + access_token, "Content-Type": "applicati
 def add_components_to_root_level(root_cmp_names1):
     global original_count, main_components_result
     original_count = 9 * len(root_cmp_names1)
-    url = "https://fitchratings.jamacloud.com/rest/latest/items?setGlobalIdManually=false"
+    url = base_url + "/rest/latest/items?setGlobalIdManually=false"
     for name in root_cmp_names1:
         data = {"project": project_api_id, "itemType": 30,
                 "childItemType": 30, "fields": {"name": name}}
@@ -42,7 +42,7 @@ def add_sets_to_components():
     set_names = ["Use Cases", "Functional Requirements", "Non-Functional Requirements", "Technical Requirements",
                  "Wireframes"]
     set_keys = ["UC", "FR", "NFR", "TR", "WF"]
-    url = "https://fitchratings.jamacloud.com/rest/latest/items?setGlobalIdManually=false"
+    url = base_url + "/rest/latest/items?setGlobalIdManually=false"
     i = 0
     while 5 > i > -1:
         for item in component_ids:
@@ -71,7 +71,7 @@ def add_sets_to_components():
 
 
 def add_test_management():
-    url = "https://fitchratings.jamacloud.com/rest/latest/items?setGlobalIdManually=false"
+    url = base_url + "/rest/latest/items?setGlobalIdManually=false"
     for item in component_ids:
         data = {"project": project_api_id, "itemType": 30,
                 "childItemType": 30, "location": {"parent": {"item": item}}, "fields": {"name": "Test Management"}}
@@ -92,7 +92,7 @@ def add_test_cases_and_defects():
     child_item_types = ["26", "27"]
     set_names = ["Test Cases", "Defects"]
     set_keys = ["TC", "DEF"]
-    url = "https://fitchratings.jamacloud.com/rest/latest/items?setGlobalIdManually=false"
+    url = base_url + "/rest/latest/items?setGlobalIdManually=false"
     i = 0
     while 2 > i > -1:
         for item in test_management_ids:
@@ -126,7 +126,7 @@ def get_user_choices():
     else:
         msg = "Please enter the target item's ID"
         document_key = enterbox(msg, title)
-        url = "https://fitchratings.jamacloud.com/rest/latest/abstractitems?project=" \
+        url = base_url + "/rest/latest/abstractitems?project=" \
               + str(project_api_id) + "&documentKey=" + document_key
         response = requests.request("GET", url, headers=headers)
         global target_item_id
@@ -135,7 +135,7 @@ def get_user_choices():
 
 def add_uc(uc_data1):
     count = []
-    url = "https://fitchratings.jamacloud.com/rest/latest/items?setGlobalIdManually=false"
+    url = base_url + "/rest/latest/items?setGlobalIdManually=false"
     for name, pre, main_flow, post, alt, blueprint_id in zip(uc_data1["Name"], uc_data1["PreCondition"],
                                                              uc_data1["MainFlow"],
                                                              uc_data1["PostCondition"], uc_data1["AlternateFlows"],
@@ -162,7 +162,7 @@ def add_uc(uc_data1):
 
 def add_cmp(cmp_name1):
     count = []
-    url = "https://fitchratings.jamacloud.com/rest/latest/items?setGlobalIdManually=false"
+    url = base_url + "/rest/latest/items?setGlobalIdManually=false"
     for name in cmp_name1:
         data = {"project": project_api_id, "itemType": 30,
                 "childItemType": 30, "location":
@@ -184,7 +184,7 @@ def add_cmp(cmp_name1):
 
 def add_rq(rq_data1):
     count = []
-    url = "https://fitchratings.jamacloud.com/rest/latest/items?setGlobalIdManually=false"
+    url = base_url + "/rest/latest/items?setGlobalIdManually=false"
     for name, description, blueprint_id in zip(rq_data1["Name"], rq_data1["Description"], rq_data1["Blueprint_ID"]):
         data = {"project": project_api_id, "itemType": 87,
                 "childItemType": 87, "location":
@@ -206,7 +206,7 @@ def add_rq(rq_data1):
 
 def add_document(doc_data1):
     count = []
-    url = "https://fitchratings.jamacloud.com/rest/latest/items?setGlobalIdManually=false"
+    url = base_url + "/rest/latest/items?setGlobalIdManually=false"
     for name, description, blueprint_id in zip(doc_data1["Name"], doc_data1["Description"], doc_data1["Blueprint_ID"]):
         data = {"project": project_api_id, "itemType": 87,
                 "childItemType": 87, "location":
@@ -228,7 +228,7 @@ def add_document(doc_data1):
 
 def add_wf(wf_data1):
     count = []
-    url = "https://fitchratings.jamacloud.com/rest/latest/items?setGlobalIdManually=false"
+    url = base_url + "/rest/latest/items?setGlobalIdManually=false"
     for name, blueprint_id in zip(wf_data1["Name"], wf_data1["Blueprint_ID"]):
         data = {"project": project_api_id, "itemType": 116,
                 "childItemType": 116, "location":
