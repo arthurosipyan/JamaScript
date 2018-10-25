@@ -16,18 +16,13 @@ Meet JamaScript, your personal assistant, ready to migrate your data!
 ## Required:
 - [Jama Account](https://www.jamasoftware.com/get-started/) 
 - [Client Credentials](http://help.jamasoftware.com/ah/en/get-started/manage-your-profile/set-api-credentials.html) 
-- [Python (3.7 or greater or greater)](https://www.python.org/downloads/)
 - [Microsoft Excel](https://www.microsoft.com/en-us/store/b/excel-2016?&OCID=AID718530_SEM_xnbrT3OI&gclid=EAIaIQobChMIrq6vo7eS3QIVl1cNCh2kFAvLEAAYASAAEgJdYfD_BwE)
 
 ## Setup:
 
-1. Download and unzip [JamaScript](https://github.com/arthurosipyan/JamaScript/archive/master.zip)
-2. Open your preferred Python IDE ([PyCharm](https://www.jetbrains.com/pycharm/download/#section=windows) is recommended)
-3. Navigate to where you saved JamaScript and open it
-4. Run ```main.py``` and enter both your client credentials and company's base url (https://{base_url}.jamacloud.com)
+1. Download [JamaScript](https://github.com/arthurosipyan/JamaScript/releases/download/v0.7/JamaScript.exe)
+4. Enter both your client credentials and **company name** (https://{**company name**}.jamacloud.com)
 5. Say hello to JamaScript, your personal migrate assistant!
-
-**Note:** Make sure you have the proper [packages](https://github.com/arthurosipyan/JamaScript/blob/master/requirements.txt) installed and have "JamaScript" as your "Sources Root"
 
 ## Running JamaScript:
 - Once logged in, you will be asked for a ```Project API_ID```. This can be found when viewing one of your Jama projects.
@@ -64,7 +59,7 @@ Meet JamaScript, your personal assistant, ready to migrate your data!
 
 ## Additional Notes:
 
-- Image and Attachment imports are no longer being developed
+- Image and Attachment imports are currently unavailable
 - While this was developed for the migration process from Blueprint to Jama, it can create new items as well
 
 
