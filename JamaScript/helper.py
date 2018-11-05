@@ -11,7 +11,7 @@ current_project = ""
 
 def get_access_token():
     msg = "Please enter your client credentials and company base url"
-    field_names = ["Client ID", "Client Secret", "Base URL"]
+    field_names = ["Base URL", "Client ID", "Client Secret"]
     field_values = multpasswordbox(msg, title, field_names)
     # make sure that none of the fields was left blank
     while 1:
@@ -25,9 +25,9 @@ def get_access_token():
             break  # no problems found
         field_values = multpasswordbox(errmsg, title, field_names, field_values)
     global access_token, base_url
-    username = field_values[0]
-    password = field_values[1]
-    base_url = field_values[2]
+    base_url = field_values[0]
+    username = field_values[1]
+    password = field_values[2]
     data = {"grant_type": "client_credentials"}
     response = requests.post(base_url + "/rest/oauth/token", data=data, auth=(username, password))
     try:
