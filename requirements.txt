@@ -20,5 +20,10 @@ request==1.0.2
 requests==2.20.0
 setuptools==40.5.0
 six==1.11.0
+<<<<<<< HEAD
 urllib3==1.24.1
 xlrd==1.1.0
+=======
+urllib3==1.24
+xlrd==1.1.0
+>>>>>>> 2fa610c784e2d824d53a766a86d45c52886bf961
