@@ -65,7 +65,7 @@ Meet JamaScript, your personal assistant, ready to migrate your data!
 
 ## Author
 
-* **Arthur Osipyan** - *Software Engineer, IT Development, Business Analyst, and Photographer* - [Instagram](https://www.instagram.com/arty.nyc/) [Twitter](https://twitter.com/arty_nyc) [GitHub](https://github.com/arthurosipyan)
+* **Arthur Osipyan** - *Software Engineer and Photographer* - [Instagram](https://www.instagram.com/arty.nyc/) [Twitter](https://twitter.com/arty_nyc) [GitHub](https://github.com/arthurosipyan)
 
 
 ## License and Code of Conduct
