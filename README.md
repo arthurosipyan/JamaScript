@@ -26,7 +26,7 @@ Meet JamaScript, your personal assistant, ready to migrate your data!
 
 ## Running JamaScript:
 - Once logged in, you will be asked for a ```Project API_ID```. This can be found when viewing one of your Jama projects.
-- After confirming that's the project you'd like to work on, you will be prompt with a few options:
+- After confirming the project you'd like to work on, you will be prompt with a few options:
 
 1. Add main components with their sets
     - This will ask for a components file and do a basic setup, which includes a set of:
@@ -42,7 +42,7 @@ Meet JamaScript, your personal assistant, ready to migrate your data!
     - Finally, you'll be asked for a file to be read. Make sure to follow the correct [file format](https://github.com/arthurosipyan/JamaScript#excel-file-format)!
 
 3. Change project
-    - Change the current project
+    - Change the current project being worked on
 
 ## Excel File Format:
 
