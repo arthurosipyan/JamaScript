@@ -44,7 +44,7 @@ def get_access_token():
 def get_project_name():
     msg = welcome + "\n Please enter the Project API-ID"
     global project_api_id
-    project_api_id = integerbox(msg, title, upperbound=300,)
+    project_api_id = integerbox(msg, title, upperbound=1000)
     url = base_url + "/rest/latest/projects/" + str(project_api_id)
     headers = {"Authorization": "Bearer " + access_token, "Content-Type": "application/json"}
     response = requests.request("GET", url, headers=headers)
