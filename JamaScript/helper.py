@@ -1,5 +1,5 @@
 import requests
-from easygui import multpasswordbox, ynbox, integerbox
+from easygui import multpasswordbox, ynbox, integerbox, ccbox
 
 access_token = ""
 base_url = ""
@@ -10,7 +10,10 @@ current_project = ""
 
 
 def get_access_token():
-    msg = "Please enter your client credentials and company base url"
+    data = {"grant_type": "client_credentials"}
+    msg = "Please enter your client credentials and company base url.\nIf you need help finding your credentials, " \
+          "please visit:\n" \
+          "https://arthurosipyan.github.io/JamaScript/"
     field_names = ["Base URL", "Client ID", "Client Secret"]
     field_values = multpasswordbox(msg, title, field_names)
     # make sure that none of the fields was left blank
@@ -28,17 +31,29 @@ def get_access_token():
     base_url = field_values[0]
     username = field_values[1]
     password = field_values[2]
-    data = {"grant_type": "client_credentials"}
-    response = requests.post(base_url + "/rest/oauth/token", data=data, auth=(username, password))
     try:
+        requests.post(base_url + "/rest/oauth/token", data=data, auth=(username, password))
+    except:
+        msg = 'ERROR: Please enter the correct base url.'
+        if ccbox(msg, title):
+            get_access_token()
+        else:
+            exit()
+
+    try:
+        response = requests.post(base_url + "/rest/oauth/token", data=data, auth=(username, password))
         access_token = response.json()['access_token']
         user = response.json()['application_data']["JAMA_CORE"]
         global welcome
         welcome = ("Welcome, " + user)
     except KeyError:
-        print('Status: ' + str(response.json()['status']) + ' ' + response.json()['error'] + '\n'
-              + 'Message: ' + response.json()['message'] + '\nPlease enter the correct client credentials.')
-        get_access_token()
+        response = requests.post(base_url + "/rest/oauth/token", data=data, auth=(username, password))
+        msg = ('ERROR: Please enter the correct client credentials.\nSTATUS: ' + str(response.json()['status']) + ' '
+               + response.json()['error'] + '\n' + 'MESSAGE: ' + response.json()['message'])
+        if ccbox(msg, title):
+            get_access_token()
+        else:
+            exit()
 
 
 def get_project_name():
@@ -54,9 +69,12 @@ def get_project_name():
         current_project = ("Current project: " + project_name)
         project_confirmation()
     except KeyError:
-        print('Status: ' + response.json()['meta']['status'] + '\nMessage: ' + response.json()['meta']['message']
-              + '\nPlease enter the correct Project API-ID.\n')
-        exit()
+        msg = ('Please enter the correct Project API-ID.\nStatus: ' + response.json()['meta']['status'] + '\nMessage: '
+               + response.json()['meta']['message'])
+        if ccbox(msg, title):
+            get_project_name()
+        else:
+            exit()
 
 
 def project_confirmation():

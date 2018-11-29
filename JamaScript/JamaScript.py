@@ -126,8 +126,7 @@ def get_user_choices():
     else:
         msg = "Please enter the target item's ID"
         document_key = enterbox(msg, title)
-        url = base_url + "/rest/latest/abstractitems?project=" \
-              + str(project_api_id) + "&documentKey=" + document_key
+        url = base_url + "/rest/latest/abstractitems?project=" + str(project_api_id) + "&documentKey=" + document_key
         response = requests.request("GET", url, headers=headers)
         global target_item_id
         target_item_id = response.json()["data"][0]['id']
