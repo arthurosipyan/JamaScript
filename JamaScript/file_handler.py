@@ -78,19 +78,3 @@ def requirements_file():
         except FileNotFoundError:
             print("Error: File not found")
             requirements_file()
-
-
-def documents_file():
-    while True:
-        rq_file_name = get_file()
-        try:
-            rq_excel_file = pd.ExcelFile(rq_file_name)
-            df = rq_excel_file.parse("Sheet1")
-            doc_data = dict()
-            doc_data["Name"] = df.iloc[:, 0].tolist()
-            doc_data["Description"] = df.iloc[:, 1].tolist()
-            doc_data["Blueprint_ID"] = df.iloc[:, 2].tolist()
-            return doc_data
-        except FileNotFoundError:
-            print("Error: File not found")
-            documents_file()
