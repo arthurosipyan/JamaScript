@@ -118,7 +118,7 @@ def add_test_cases_and_defects():
 
 
 def get_user_choices():
-    choices = ["Component", "Use Case", "Requirement", "Wireframe", "Document", "Go back"]
+    choices = ["Component", "Use Case", "Requirement", "Wireframe", "Go back"]
     global user_choice
     user_choice = choicebox("What artifact type would you like to add?", choices=choices)
     if user_choice == "Go back":
@@ -203,28 +203,6 @@ def add_rq(rq_data1):
         artifact_result = "Failed, only [" + str(len(count)) + "] Requirements were imported."
 
 
-def add_document(doc_data1):
-    count = []
-    url = base_url + "/rest/latest/items?setGlobalIdManually=false"
-    for name, description, blueprint_id in zip(doc_data1["Name"], doc_data1["Description"], doc_data1["Blueprint_ID"]):
-        data = {"project": project_api_id, "itemType": 87,
-                "childItemType": 87, "location":
-                    {
-                        "parent":
-                            {
-                                "item": target_item_id
-                            }
-                    }, "fields": {"name": name, "description": description, "blueprint_id": blueprint_id}
-                }
-        response = requests.request("POST", url, headers=headers, data=json.dumps(data))
-        count.append(response.json()["meta"]["id"])
-    global artifact_result
-    if len(doc_data1["Name"]) == len(count):
-        artifact_result = "Success, imported [" + str(len(count)) + "] Documents!"
-    else:
-        artifact_result = "Failed, only [" + str(len(count)) + "] Documents imported."
-
-
 def add_wf(wf_data1):
     count = []
     url = base_url + "/rest/latest/items?setGlobalIdManually=false"
@@ -267,11 +245,6 @@ def add_requirements():
     elif user_choice == "Wireframe":
         from file_handler import wireframes_file
         add_wf(wireframes_file())
-        display = artifact_result
-        main2()
-    elif user_choice == "Document":
-        from file_handler import documents_file
-        add_document(documents_file())
         display = artifact_result
         main2()
     else:
