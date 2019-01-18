@@ -16,6 +16,10 @@ main_selection = 0
 main2_selection = 0
 total_items_imported = 0
 original_count = 0
+choices = ["Architecture", "Business Request", "Component", "Data Dictionary",
+           "Data Requirement", "Defect", "Epic", "Functional Requirement",
+           "Meeting Note", "Non-Functional Requirement", "Persona", "Requirement",
+           "Style Guide", "Test Case", "Text", "Use Case", "User Storie", "Wireframe"]
 headers = {"Authorization": "Bearer " + access_token, "Content-Type": "application/json"}
 
 
@@ -118,7 +122,6 @@ def add_test_cases_and_defects():
 
 
 def get_user_choices():
-    choices = ["Component", "Use Case", "Requirement", "Wireframe", "Go back"]
     global user_choice
     user_choice = choicebox("What artifact type would you like to add?", choices=choices)
     if user_choice == "Go back":
@@ -227,22 +230,64 @@ def add_wf(wf_data1):
 
 def add_requirements():
     global display
-    if user_choice == "Component":
+    if user_choice == choices[0]:
+        display = "Architecture in development."
+        main2()
+    elif user_choice == choices[1]:
+        display = "Business Request in development."
+        main2()
+    elif user_choice == choices[2]:
         from file_handler import components_file
         add_cmp(components_file())
         display = artifact_result
         main2()
-    elif user_choice == "Use Case":
-        from file_handler import use_cases_file
-        add_uc(use_cases_file())
-        display = artifact_result
+    elif user_choice == choices[3]:
+        display = "Data Dictionary in development."
         main2()
-    elif user_choice == "Requirement":
+    elif user_choice == choices[4]:
+        display = "Data Requirement in development."
+        main2()
+    elif user_choice == choices[5]:
+        display = "Defect in development."
+        main2()
+    elif user_choice == choices[6]:
+        display = "Epic in development."
+        main2()
+    elif user_choice == choices[7]:
+        display = "Functional Requirement in development."
+        main2()
+    elif user_choice == choices[8]:
+        display = "Meeting Note in development."
+        main2()
+    elif user_choice == choices[9]:
+        display = "Non-Functional Requirement in development."
+        main2()
+    elif user_choice == choices[10]:
+        display = "Persona in development."
+        main2()
+    elif user_choice == choices[11]:
         from file_handler import requirements_file
         add_rq(requirements_file())
         display = artifact_result
         main2()
-    elif user_choice == "Wireframe":
+    elif user_choice == choices[12]:
+        display = "Style Guide in development."
+        main2()
+    elif user_choice == choices[13]:
+        display = "Test Case in development."
+        main2()
+    elif user_choice == choices[14]:
+        display = "Text in development."
+        main2()
+    elif user_choice == choices[15]:
+        from file_handler import use_cases_file
+        add_uc(use_cases_file())
+        display = artifact_result
+        main2()
+    elif user_choice == choices[16]:
+        display = "User Story in development."
+        main2()
+    elif user_choice == choices[17]:
         from file_handler import wireframes_file
         add_wf(wireframes_file())
         display = artifact_result
