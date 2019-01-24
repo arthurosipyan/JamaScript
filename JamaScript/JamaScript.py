@@ -317,8 +317,8 @@ def main():
     global main_selection, display
     main_selection = choicebox("What would you like to do?", choices=choices, title=title)
     if main_selection == "Add main components with their sets":
-        from file_handler import root_components_file
-        add_components_to_root_level(root_components_file())
+        from file_handler import components_file
+        add_components_to_root_level(components_file())
         add_sets_to_components()
         add_test_management()
         add_test_cases_and_defects()

@@ -6,18 +6,6 @@ def get_file():
     return fileopenbox(msg="Please select the excel file you'd wish to migrate", title="JamaScript", default='*', filetypes=".xlsx", multiple=False)
 
 
-def root_components_file():
-    while True:
-        root_cmp_file_name = get_file()
-        try:
-            cmp_excel_file = pd.ExcelFile(root_cmp_file_name)
-            df = cmp_excel_file.parse("Sheet1")
-            return df.iloc[:, 0].tolist()
-        except FileNotFoundError:
-            print("Error: File not found")
-            root_components_file()
-
-
 def components_file():
     while True:
         cmp_file_name = get_file()
