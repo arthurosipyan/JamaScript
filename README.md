@@ -20,7 +20,7 @@ Meet JamaScript, your personal assistant, ready to migrate your data!
 
 ## Setup:
 
-1. Download [JamaScript](https://github.com/arthurosipyan/JamaScript/releases/download/v0.4.1-alpha/JamaScript.exe)
+1. Download [JamaScript](https://github.com/arthurosipyan/JamaScript/releases/download/v0.5.1-alpha/JamaScript.exe)
 4. Enter both your client credentials and **company name** (https://{**company name**}.jamacloud.com)
 5. Say hello to JamaScript, your personal migrate assistant!
 
