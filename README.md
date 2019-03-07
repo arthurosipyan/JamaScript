@@ -32,7 +32,7 @@
         - Functional Requirements
         - Non-Functional Requirements
         - Technical Requirements
-        - Test Cases and Defects with a parent folder named "Test Management" Sub Component
+        - Test Cases and Defects with a parent component named "Test Management"
 
 2. Add artifacts
     - This will ask you to select what type of artifact you'd like to import
