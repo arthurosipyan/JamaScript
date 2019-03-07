@@ -58,6 +58,7 @@
 ## Additional Notes:
 
 - Image and Attachment imports are currently unavailable
+- Refrain from starting your text with a number, as it causes a known issue
 
 ## Author
 
