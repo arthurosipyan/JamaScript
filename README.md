@@ -1,4 +1,4 @@
-# ![](https://raw.githubusercontent.com/arthurosipyan/JamaScript/master/logo/JamaScript.PNG "JamaScript")
+# ![](https://raw.githubusercontent.com/arthurosipyan/JamaScript/master/logo/JamaScriptLogo.PNG "JamaScript")
 
 ## Table of Contents:
 - [Required](https://github.com/arthurosipyan/JamaScript#required) 
