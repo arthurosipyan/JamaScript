@@ -58,8 +58,6 @@
 ## Additional Notes:
 
 - Image and Attachment imports are currently unavailable
-- While this was developed for the migration process from Blueprint to Jama, it can create new items as well
-
 
 ## Author
 
