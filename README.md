@@ -22,7 +22,7 @@
 4. Enter both your client credentials and **company name** (https://{**company name**}.jamacloud.com)
 5. Say hello to JamaScript, your personal migrate assistant!
 
-**Note:** JamaScript will need to be optomized according to your projects settings. For example, very project contains different numerical keys for item types and sets.
+**Note:** JamaScript will need to be optomized according to your projects settings. For example, every project contains different numerical keys for item types and sets.
 
 ## Running JamaScript:
 - Once logged in, you will be asked for a ```Project API_ID```. This can be found when viewing one of your Jama projects.
