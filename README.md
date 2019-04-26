@@ -64,7 +64,7 @@
 
 ## Author
 
-* **Arthur Osipyan** - *Programmer and Photographer* - [Instagram](https://www.instagram.com/arty.nyc/) [Twitter](https://twitter.com/arty_nyc) [GitHub](https://github.com/arthurosipyan)
+* **Arthur Osipyan** - *Software Engineer* - [Website](https://www.arthurosipyan.me)
 
 
 ## License and Code of Conduct
