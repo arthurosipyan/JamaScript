@@ -1,5 +1,7 @@
 # ![](https://raw.githubusercontent.com/arthurosipyan/JamaScript/master/logo/JamaScriptLogo.PNG "JamaScript")
 
+[![Build Status](https://travis-ci.com/arthurosipyan/JamaScript.svg?branch=master)](https://travis-ci.com/arthurosipyan/JamaScript)
+
 ## Table of Contents:
 - [Required](https://github.com/arthurosipyan/JamaScript#required) 
 - [Setup](https://github.com/arthurosipyan/JamaScript#setup) 
