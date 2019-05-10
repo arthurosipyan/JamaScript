@@ -9,4 +9,4 @@ install:
 
 script:
   - py.test -v --color=yes --exitfirst --showlocals --durations=5
-  - python ./JamaScript.py 
+  - python ./JamaScript/JamaScript.py 
