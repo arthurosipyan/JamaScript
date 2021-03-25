@@ -1,4 +1,4 @@
-PyYAML==4.2b1
+PyYAML==5.4
 certifi==2018.10.15
 chardet==3.0.4
 docutils==0.14
