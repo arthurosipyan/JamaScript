@@ -64,7 +64,7 @@
 
 ## Author
 
-* **Arthur Osipyan** - *Software Engineer* - [Website](https://www.arthurosipyan.me)
+* **Arthur Osipyan** - *Software Engineer*
 
 
 ## License and Code of Conduct
